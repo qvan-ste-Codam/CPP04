@@ -2,19 +2,15 @@
 
 #include <iostream>
 
-Animal::Animal(std::string type) : brain{new Brain}, type{type} {
+Animal::Animal(std::string type) : type{type} {
     std::cout << "Created animal base" << std::endl;
 }
 
-Animal::Animal(const Animal& other)
-    : brain{new Brain(*other.brain)}, type{other.type} {
+Animal::Animal(const Animal& other) : type{other.type} {
     std::cout << "Created animal base" << std::endl;
 }
 
-Animal::~Animal() {
-    std::cout << "Deleted animal base" << std::endl;
-    delete this->brain;
-}
+Animal::~Animal() { std::cout << "Deleted animal base" << std::endl; }
 
 Animal& ::Animal::operator=(const Animal & other) {
     if (this != &other) {

@@ -10,7 +10,6 @@ class Brain {
     Brain &operator=(const Brain &other);
 
     const std::string &getIdea(size_t i) const;
-    void setIdea(size_t i, const std::string &idea);
     void createRandomIdeas();
 
    private:
@@ -18,6 +17,7 @@ class Brain {
     std::string ideas[numOfIdeas];
 
     void copyIdeas(const Brain &other);
+    void setIdea(size_t i, const std::string &idea);
 };
 
 #endif
